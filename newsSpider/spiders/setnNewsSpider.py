@@ -15,3 +15,6 @@ class SetnNewsSpider(CrawlSpider):
     def parse_news(self, response):
 
         print(response.url)
+
+        # newsItem = NewsspiderItem(title=title, content=content)
+        

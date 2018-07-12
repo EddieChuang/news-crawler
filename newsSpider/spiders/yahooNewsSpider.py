@@ -39,8 +39,8 @@ class YahooNewsSpider(CrawlSpider):
         """
         # end of lua
         splash_args = {'lua_source': script, 'wait': 2}
-        for url in self.start_urls:
-            yield SplashRequest(url, dont_process_response=True, args=splash_args, endpoint='execute', meta={'real_url': url})
+        # for url in self.start_urls:
+        #     yield SplashRequest(url, dont_process_response=True, args=splash_args, endpoint='execute', meta={'real_url': url})
 
         rules = [Rule(LinkExtractor(allow='[.]*'), callback='parse_result', process_request="splash_request")]
 
