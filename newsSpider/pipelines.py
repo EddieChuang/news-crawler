@@ -7,5 +7,10 @@
 
 
 class NewsspiderPipeline(object):
+
+
     def process_item(self, item, spider):
+        with open('{}-news.txt'.format(item['name']), 'a') as file:
+            file.write("{}\n".format(item['content']))
+
         return item
