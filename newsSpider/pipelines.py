@@ -15,7 +15,7 @@ class NewsspiderPipeline(object):
         # if item['time'] == today:
         #     return None
         # with open('{}-{}-news.txt'.format(item['name'], item['cat']), 'a') as file:
-        with open('{}-news.txt'.format(item['name']), 'a') as file:
+        with open('news/{}-news.txt'.format(item['name']), 'a') as file:
             file.write("{}\n".format(item['content']))
 
         return item

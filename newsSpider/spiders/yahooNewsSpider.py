@@ -35,7 +35,9 @@ class YahooNewsSpider(CrawlSpider):
                     scroll_to(0, get_body_height())
                     splash:wait(scroll_delay)
                 end 
+                
                 return splash:html()
+
             end
         """
         # end of lua
@@ -47,7 +49,7 @@ class YahooNewsSpider(CrawlSpider):
             yield SplashRequest(url, callback=self.parse_news_content, args=self.splash_args, endpoint='execute')
 
     def parse_news_links(self, response):
-        print(response.url)
+        print(response)
 
         LINK_SELECTOR = 'h3 a[href$=html]::attr(href)'
         links = response.css(LINK_SELECTOR).extract()
